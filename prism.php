@@ -3,7 +3,7 @@
 Plugin Name: Prism Code Highlighting
 Description: Highlights code on the site.
 Author: Luke Woodward
-Version: 1.0
+Version: 1.0.1
 Author URI: http://luke-woodward.com
 */
 
