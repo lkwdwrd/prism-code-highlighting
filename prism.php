@@ -97,7 +97,7 @@ class WPC_Prism{
 
 		$return = '<div class="codeblock">';
 		$return .= '<h3>' . $language . '</h3>';
-		$return .= '<pre><code class="language-' . $language . '">' . htmlentities2( $code ) . '</code></pre>';
+		$return .= '<pre><code class="language-' . $language . '">' . $code . '</code></pre>';
 		$return .= '</div>';
 		return $return;
 	}
