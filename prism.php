@@ -37,12 +37,17 @@ class WPC_Prism{
 	 * The protected code blocks
 	 */
 	private $codeblocks = array();
+		/**
+	 * Sets the plugin directory name
+	 */
+	private static $_dirname;
 	/**
 	 * Sets up everything for the plugin
 	 *
 	 * @return void.
 	 */
 	private function __construct(){
+		$this->_dirname = basename( dirname( __FILE__ ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'the_content', array( $this, 'preserve_line_breaks' ), 5 ); //before other wp content filters
 		add_shortcode( 'code', array( $this, 'block_output' ) );
@@ -54,8 +59,8 @@ class WPC_Prism{
 	 * @return void.
 	 */
 	public function enqueue_scripts(){
-		wp_enqueue_script( 'prism', plugins_url( '/prism/inc/prism.js' ), array(), '', true );
-		wp_enqueue_style( 'prism-style', plugins_url( '/prism/inc/prism.css' ) );
+		wp_enqueue_script( 'prism', plugins_url( $this->_dirname . '/inc/prism.js' ), array(), '', true );
+		wp_enqueue_style( 'prism-style', plugins_url( $this->_dirname . '/inc/prism.css' ) );
 	}
 	/**
 	 * Filters linebreaks out of our block shortcode so that they don't get littered with
