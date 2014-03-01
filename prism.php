@@ -4,13 +4,13 @@ Plugin Name: Prism Code Highlighting
 Description: Highlights code on the site.
 Author: Luke Woodward
 Version: 1.0.1
-Author URI: http://luke-woodward.com
+Author URI: http://lkwdwrd.com
 */
 
 /**
  * Wraps everything in a class to keep stuff out of global scope.
  */
-class WPC_Prism{
+class LKWD_Prism{
 	/**
 	 * The one and only instance of this class.
 	 */
@@ -116,4 +116,4 @@ class WPC_Prism{
 		return '<code class="language-' . $language . '">' . htmlentities2( $code ) . '</code>';
 	}
 }
-add_action( 'plugins_loaded', array( 'WPC_Prism', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'LKWD_Prism', 'get_instance' ) );
