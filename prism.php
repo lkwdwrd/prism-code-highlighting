@@ -25,8 +25,8 @@ class LKWD_Prism{
 	 * @return obj The one instance of this class.
 	 */
 	public static function get_instance(){
-		if ( ! self::$_instance instanceof WPC_Prism )
-			self::$_instance = new WPC_Prism;
+		if ( ! self::$_instance instanceof self )
+			self::$_instance = new self;
 		return self::$_instance;
 	}
 	/**
