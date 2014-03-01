@@ -40,7 +40,7 @@ class LKWD_Prism{
 		/**
 	 * Sets the plugin directory name
 	 */
-	private static $_dirname;
+	private $_dirname;
 	/**
 	 * Sets up everything for the plugin
 	 *
