@@ -99,7 +99,7 @@ class LKWD_Prism{
 		if ( '' !== $language ) {
 			$return .= '<h3>' . $language . '</h3>';
 		}
-		$return .= '<pre><code class="language-' . $language . '">' . htmlentities2( $code ) . '</code></pre>';
+		$return .= '<pre><code class="language-' . $language . '">' . esc_html( $code ) . '</code></pre>';
 		$return .= '</div>';
 		return $return;
 	}
