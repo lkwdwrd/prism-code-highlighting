@@ -115,7 +115,7 @@ class LKWD_Prism{
 			$atts[0] = '';
 
 		$language = $atts[0];
-		return '<code class="language-' . $language . '">' . htmlentities2( $code ) . '</code>';
+		return '<code class="language-' . $language . '">' . esc_html( $code ) . '</code>';
 	}
 }
 add_action( 'plugins_loaded', array( 'LKWD_Prism', 'get_instance' ) );
