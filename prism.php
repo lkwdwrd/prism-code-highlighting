@@ -90,7 +90,7 @@ class LKWD_Prism{
 	 */
 	public function block_output( $atts, $code ){
 		if( ! isset( $atts[0] ) || ! in_array( $atts[0], $this->languages ) )
-			return;
+			$atts[0] = '';
 
 		$language = $atts[0];
 		$code = trim( preg_replace( '#{{cb([0-9]*?)}}#e', '$this->codeblocks[ "$1" ]' , $code ) );
@@ -110,7 +110,7 @@ class LKWD_Prism{
 	 */
 	public function inline_output( $atts, $code ){
 		if( ! isset( $atts[0] ) || ! in_array( $atts[0], $this->languages ) )
-			return;
+			$atts[0] = '';
 
 		$language = $atts[0];
 		return '<code class="language-' . $language . '">' . htmlentities2( $code ) . '</code>';
