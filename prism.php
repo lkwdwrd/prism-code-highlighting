@@ -96,7 +96,9 @@ class LKWD_Prism{
 		$code = trim( preg_replace( '#{{cb([0-9]*?)}}#e', '$this->codeblocks[ "$1" ]' , $code ) );
 
 		$return = '<div class="codeblock">';
-		$return .= '<h3>' . $language . '</h3>';
+		if ( '' !== $language ) {
+			$return .= '<h3>' . $language . '</h3>';
+		}
 		$return .= '<pre><code class="language-' . $language . '">' . htmlentities2( $code ) . '</code></pre>';
 		$return .= '</div>';
 		return $return;
